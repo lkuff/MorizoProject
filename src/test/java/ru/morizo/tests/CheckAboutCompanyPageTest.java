@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import static io.qameta.allure.Allure.step;
 
-public class checkAboutCompanyPageTest extends TestBase {
+public class CheckAboutCompanyPageTest extends TestBase {
 
     @DisplayName("Check about company page")
     @Test
