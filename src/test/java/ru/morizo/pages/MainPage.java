@@ -55,10 +55,8 @@ public class MainPage {
         switchTo().window(1);
     }
 
-    public void checkYandexMapsUrl() {
-        webdriver().shouldHave(url("https://yandex.ru/maps/213/moscow/house/" +
-                "ulitsa_butyrskiy_val_10/Z04Ycw9mSUMPQFtvfXt2eXhlZQ==/" +
-                "?from=mapframe&ll=37.586068%2C55.779755&source=mapframe&utm_source=mapframe&z=16"));
+    public void checkYandexMapsAddress() {
+        $(".card-title-view__wrapper h1").shouldHave(text("улица Бутырский Вал, 10"));
     }
 
     public void clickOnVKIcon() {

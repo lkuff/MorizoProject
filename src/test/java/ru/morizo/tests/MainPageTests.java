@@ -33,7 +33,7 @@ public class MainPageTests extends TestBase {
         });
         step("Switch to new window and check url", () -> {
             mainPage.switchToWindowOne();
-            mainPage.checkYandexMapsUrl();
+            mainPage.checkYandexMapsAddress();
         });
     }
 
