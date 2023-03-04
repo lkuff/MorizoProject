@@ -56,9 +56,9 @@ public class MainPage {
     }
 
     public void checkYandexMapsUrl() {
-        webdriver().shouldHave(url("https://yandex.ru/maps/213/moscow/house/ulitsa_butyrskiy_val_10/" +
-                "Z04Ycw9mSUMPQFtvfXt2eXhlZQ==/" +
-                "?from=mapframe&ll=37.586068%2C55.778461&source=mapframe&utm_source=mapframe&z=16"));
+        webdriver().shouldHave(url("https://yandex.ru/maps/213/moscow/house/" +
+                "ulitsa_butyrskiy_val_10/Z04Ycw9mSUMPQFtvfXt2eXhlZQ==/" +
+                "?from=mapframe&ll=37.586068%2C55.779755&source=mapframe&utm_source=mapframe&z=16"));
     }
 
     public void clickOnVKIcon() {
@@ -76,5 +76,12 @@ public class MainPage {
 
     public void clickOnPortfolioButton() {
         $(".v-button--link").scrollTo().click();
+    }
+    public void hoverOverOnAboutCompanyButton() {
+        $$(".v-header-menu ul li").findBy(text("О компании")).hover();
+    }
+
+    public void clickOnAboutCompanyButton() {
+        $$(".v-header-menu__level-2 li a").findBy(href("https://morizo.ru/about")).click();
     }
 }

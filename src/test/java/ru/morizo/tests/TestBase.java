@@ -8,19 +8,18 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import ru.morizo.helpers.Attach;
-import ru.morizo.pages.AwardsPage;
-import ru.morizo.pages.MainPage;
-import ru.morizo.pages.PortfolioPage;
-import ru.morizo.pages.VacanciesPage;
+import ru.morizo.pages.*;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
+import static com.codeborne.selenide.Selenide.open;
 
 public class TestBase {
 
-    MainPage mainPage = new MainPage();
-    VacanciesPage vacanciesPage = new VacanciesPage();
-    AwardsPage awardsPage = new AwardsPage();
-    PortfolioPage portfolioPage = new PortfolioPage();
+    public MainPage mainPage = new MainPage();
+    public VacanciesPage vacanciesPage = new VacanciesPage();
+    public AwardsPage awardsPage = new AwardsPage();
+    public PortfolioPage portfolioPage = new PortfolioPage();
+    public AboutCompanyPage aboutCompanyPage  = new AboutCompanyPage();
 
     @BeforeAll
     static void beforeAll() {
@@ -39,6 +38,10 @@ public class TestBase {
     @BeforeEach
     void addListener() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+    }
+    @BeforeEach
+    void setUp() {
+        open("https://morizo.ru/");
     }
 
     @AfterEach
